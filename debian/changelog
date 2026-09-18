@@ -1,0 +1,12 @@
+ros-jazzy-localization-msgs-tools (1.0.1-1bookworm) bookworm; urgency=high
+
+  * update Readme after fusing the two packages
+  * regroup packages into a single one
+  * add inverse param
+  * add param file example in readme
+  * first commit with 2 packages and components
+  * Contributors: Olivier Kermorgant
+
+ -- "Olivier Kermorgant" <olivier.kermorgant@ec-nantes.fr>  Tue, 25 Aug 2026 22:00:00 -0000
+
+
