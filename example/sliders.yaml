@@ -1,0 +1,40 @@
+pose_gt:
+    type: geometry_msgs/Pose
+    x:
+        to: position.x
+        min: -1
+        max: 1
+
+twist_raw:
+    type: geometry_msgs/TwistStamped
+    header.frame_id: base_link
+    w:
+        to: twist.angular.z
+        min: -1
+        max: 1
+
+imu_raw:
+    type: sensor_msgs/Imu
+    header.frame_id: imu
+    ax:
+        to: linear_acceleration.x
+        min: -1
+        max: 1
+
+odom_raw:
+    type: nav_msgs/Odometry
+    header.frame_id: odom
+    child_frame_id: base_link
+    vx:
+        to: twist.twist.linear.x
+        min: -1
+        max: 1
+
+navsat_raw:
+    type: sensor_msgs/NavSatFix
+    header.frame_id: gps
+    lat:
+        to: latitude
+        min: -90
+        max: 90
+

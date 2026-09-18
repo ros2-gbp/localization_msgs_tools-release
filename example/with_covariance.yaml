@@ -1,0 +1,47 @@
+### example of with_covariance ###
+
+
+/**:
+    ros__parameters:
+        # subscribe to some Pose, publish as PoseWithCovarianceStamped
+        pose0: pose_gt
+        pose0.frame_id: base_link
+        pose0.out: pose_with_cov
+        pose0.cov:
+            # linear covariance
+            xyz: [.1, .1, .1]
+            # angular covariance
+            rpy: [.1, .1, .1]
+
+        # IMU
+        imu0: imu_raw
+        imu0.out: imu_with_cov
+        imu0.cov:
+            # angular covariance
+            rpy: [.1, .1, .1]
+            # angular velocity covariance
+            angvel: [.1, .1, .1]
+            # acceleration covariance
+            accel: [.1, .1, .1]
+
+        # Odometry
+        odom0: odom_raw
+        odom0.out: odom_with_cov
+        odom0.cov:
+            # xyz: [] # do not change incoming covariance for pose
+            # rpy: []
+            linvel: [.1, .1, .1]
+            angvel: [.1, .1, .1]
+
+        twist0: twist_raw
+        twist0.out: twist_with_cov
+        twist0.frame_id: base_link
+        twist0.cov:
+            linvel: [.1, .1, .1]
+            angvel: [.1, .1, .1]
+
+        # NavSat
+        navsat0: navsat_raw
+        navsat0.out: navsat_with_cov
+        navsat0.cov.xyz: [5.,5.,1.]
+
