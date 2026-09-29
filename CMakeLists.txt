@@ -1,8 +1,13 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.15)
 project(localization_msgs_tools)
 
 find_package(ament_cmake_auto REQUIRED)
 ament_auto_find_build_dependencies()
+
+# get ROSDISTRO to adapt fors header extension
+if("$ENV{ROS_DISTRO}" STRGREATER_EQUAL "lyrical")
+  add_compile_definitions(ROS_HEADERS_HPP_EXTENSION)
+endif()
 
 ament_auto_add_library(pose_to_tf_node SHARED src/pose_to_tf.cpp)
 ament_auto_add_library(with_covariance_node SHARED src/with_covariance.cpp)
